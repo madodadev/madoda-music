@@ -1,0 +1,144 @@
+{
+    "key": "group_5d0668823b713",
+    "title": "playlist",
+    "fields": [
+        {
+            "key": "field_5d2de237e09d4",
+            "label": "music file",
+            "name": "music_file",
+            "type": "file",
+            "instructions": "upload music",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": 100,
+            "mime_types": ".mp4, .mp3, .ogg, .zip, .rar, .tar"
+        },
+        {
+            "key": "field_5d2de2999331c",
+            "label": "music link",
+            "name": "music_link",
+            "type": "url",
+            "instructions": "use esta campo caso não pretender fazer upload do arquivo neste server",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d0668a326f35",
+            "label": "music list",
+            "name": "music_list",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": 20,
+            "return_format": "object"
+        },
+        {
+            "key": "field_5d2f1bf0c8f7c",
+            "label": "Music list by category",
+            "name": "music_list_by_category",
+            "type": "taxonomy",
+            "instructions": "Usar Todas Musicas de uma Categoria para criar a lista de musicas (este campo so funciona se 'music list' estiver em branco)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d0668a326f35",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_5d2f60855dca7",
+            "label": "Music list by tags",
+            "name": "music_list_by_tags",
+            "type": "taxonomy",
+            "instructions": "Usar Todas Musicas de uma Tags para criar a lista de musicas (este campo so funciona se 'music list' e 'Music list by category' estiverem em branco)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d0668a326f35",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "field_type": "checkbox",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "playlist"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565368006
+}

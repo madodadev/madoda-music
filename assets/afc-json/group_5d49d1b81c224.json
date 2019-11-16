@@ -1,0 +1,268 @@
+{
+    "key": "group_5d49d1b81c224",
+    "title": "tags",
+    "fields": [
+        {
+            "key": "field_5d49d1c24598a",
+            "label": "Not edit tags",
+            "name": "not_edit_tags",
+            "type": "true_false",
+            "instructions": "se este campo estiver selecionado as tegas nao serao editadas",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Nao editar tags",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d4ab910dff7e",
+            "label": "tag title",
+            "name": "tag_title",
+            "type": "text",
+            "instructions": "use este campo se NAO quiser usar [title no music info] como a tag titulo do mp3",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d4aba003f7af",
+            "label": "tag artist",
+            "name": "tag_artist",
+            "type": "text",
+            "instructions": "use este campo se NAO quiser usar [artist selecionado no music info] como a tag titulo do mp3",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d4abaad009e6",
+            "label": "tag album",
+            "name": "tag_album",
+            "type": "text",
+            "instructions": "use este campo se NAO quiser usar [NOME DO SITE] como a tag album do mp3",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d4c6aca5d4d3",
+            "label": "tag Genre",
+            "name": "tag_genre",
+            "type": "text",
+            "instructions": "use este campo se NAO quiser usar [categoria do post] como a tag categoria do mp3",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d4c6e3917f30",
+            "label": "tag coment",
+            "name": "tag_coment",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d4c6c35d322e",
+            "label": "track NUM",
+            "name": "tag_track_num",
+            "type": "number",
+            "instructions": "numero da musica no album\/playlist",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5d4c6cd324399",
+            "label": "total track",
+            "name": "tag_total_track",
+            "type": "number",
+            "instructions": "Numero total de musicas no album\/playlist",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5d49d24effcc4",
+            "label": "cover",
+            "name": "cover",
+            "type": "image",
+            "instructions": "use este campo se NAO quiser usar [imagem do post] como cover do mp3",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d49d1c24598a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565368016
+}

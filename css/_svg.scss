@@ -1,0 +1,80 @@
+.menu-svg, .search-svg, .close-search-svg {
+    path {
+        fill: var( --main-fk-color );
+    }
+}
+.social-media {
+    .social-media-icon {
+        height: 35px;
+        width: 35px;
+
+        path, circle {
+            fill: #808080;
+            transition: .3s;
+        }
+
+    }
+
+    .icon-facebook {
+        path:hover {
+            fill: #3b5998;
+        }
+    }
+
+    .icon-instagram {
+        path:hover {
+            fill: #fd5949;
+        }
+    }
+
+    .icon-youtube {
+        .active-path:hover {
+            fill: #FF2626;
+        }
+    }
+    
+    .icon-spotify {
+        .active-path:hover {
+            fill: #1ed761;
+        }
+    }
+
+    .icon-soundcloud {
+        path:hover {
+            fill: #ff7700;
+        }
+    }
+    
+    .icon-website {
+        path:hover {
+            fill: #1ed761;
+        }
+    }
+
+    .icon-twitter {
+        .active-path:hover {
+            fill: #00acee;
+        }
+    }
+
+}
+
+.list-btn {
+    .list-btn-icon {
+        width: 25px;
+        height: 25px;
+
+        path {
+            fill: #1c2833;
+        }
+        
+        path:hover {
+            fill: #ED3B58;
+        }
+    }
+
+    .icon-download {
+        width: 30px;
+        height: 30px;  
+    }
+}

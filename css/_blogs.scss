@@ -1,0 +1,134 @@
+$colors: (
+    main: #1c2833,
+    mainfk: #FDFEFE,
+    sec: #808080
+);
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+$tablet-with: 768px;
+@mixin tablet {
+    @media (min-width: #{$tablet-with}) {
+        @content
+    }
+}
+
+$desktop-with: 992px;
+@mixin desktop {
+    @media (min-width: #{$desktop-with}) {
+        @content
+    }
+}
+
+.blog-category {
+    font-size: 1.2rem;
+    color: color('mainfk');
+    margin: 5px 0;
+}
+.blog-see-more {
+    color: #1a73e8;
+    font-size: 1.1rem;
+}
+.blog-loop-cont {
+    .article{
+
+        display: grid;
+        grid-template-columns: 1fr;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, .3);
+        background-color: #1c2833;
+        margin: 10px 0;
+        @include tablet {
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 100%;
+        }
+        .blog-content {
+            .blog-title {
+                // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, .3);
+                // margin: 5px 0;
+                color: #1a73e8;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            p {
+                color: #FDFEFE;
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+            .blog-see-more {
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+#blog-single {
+    background-color: rgb(248, 248, 248);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+    .header {
+        .main-blog-img {
+            height: 30vh;
+            width: 30vw;
+            float: right;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 200;
+            color: rgb(0, 0, 0);
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
+            padding: 10px;
+        }
+
+        .blog-date {
+            font-size: 1rem;
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+    }
+
+    .content{
+        p {
+            color: rgb(43, 43, 43);
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+    }
+}
+
+.new-posts {
+    .article {
+        background-color: color('mainfk');
+        margin: 5px 0;
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 200;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, .4);
+         
+        }
+        a{
+            color: #1a73e8;
+            font-size: 1.1rem;
+        }
+
+        .blog-content {
+            padding: 10px;
+
+            p {
+                color: rgb(43, 43, 43);
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,15 @@
+<svg width="350" height="350" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="#4c4c4c" id="canvas_background" height="352" width="352" y="-1" x="-1"/>
+  <g display="none" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_1"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text fill="#333333" stroke="#cccccc" stroke-width="15" x="66.54581" y="181" id="svg_4" font-size="55" font-family="Junction, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">M D D M</text>
+  <text fill="#e5e5e5" stroke-width="0" x="93.60938" y="233" id="svg_2" font-size="45" font-family="'Courier New', Courier, monospace" text-anchor="start" xml:space="preserve" stroke="#cccccc" font-weight="bold" font-style="normal">NO IMG</text>
+ </g>
+</svg>

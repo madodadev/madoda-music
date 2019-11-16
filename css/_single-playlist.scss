@@ -1,0 +1,66 @@
+$colors: (
+    main: #1c2833,
+    mainfk: #FDFEFE,
+    sec: #808080
+);
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+$tablets-with: 768px;
+@mixin tablet {
+    @media (min-width: #{$tablets-with}) {
+        @content
+    }
+}
+
+$desktop-with: 991px;
+@mixin desktop {
+    @media (min-width: #{$desktop-with}) {
+        @content
+    }
+}
+
+@mixin mobail_tablet {
+    @media (max-width: #{$desktop-with}) {
+        @content
+    }
+}
+
+.music-list {
+    width: 100%;
+
+    @include tablet {
+        width: 80%;
+    }
+    margin: 5px auto;
+    a, i, .music-number {
+        color: var(--main-bg-color);
+        opacity: .9;
+    }
+    a:hover{
+        opacity: 1;
+    }
+    .artist-and-title{
+        // padding-right: 50px;
+        text-align: right;
+    }
+
+    ul {
+        @include desktop{
+            // width: 70%;
+        }
+        li {
+            background-color: var(--main-fk-color);
+            padding: 10px 0px;
+            padding-left: 20px;
+            margin: 5px;
+            border-radius:5px;
+            .list-btn {
+                text-align: right;
+                margin-right: 5px;
+            }
+        }
+    }
+}

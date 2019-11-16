@@ -1,0 +1,51 @@
+{
+    "key": "group_5d0dd4750988d",
+    "title": "blog",
+    "fields": [
+        {
+            "key": "field_5d0dd47afcc68",
+            "label": "blog artist",
+            "name": "blog_artist",
+            "type": "relationship",
+            "instructions": "selecionar artista relacionado com o conteúdo (opcional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "artist"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "blog"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565367938
+}
