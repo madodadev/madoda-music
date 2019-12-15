@@ -143,6 +143,10 @@ while(have_posts()){
         <?php the_tags();?>
     </div>
     <?php mdd_new_musics(6);?>
+
+    <div class="wp-comments">
+        <?php comments_template(); ?>
+    </div>
     </section>
 <?php
 //close while

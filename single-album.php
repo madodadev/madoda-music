@@ -142,7 +142,10 @@ while(have_posts()){
     <div class="tags">
         <?php the_tags();?>
     </div>  
-</div>            
+    </div>   
+    <div class="wp-comments">
+        <?php comments_template(); ?>
+    </div>
 </section>
 <?php
 //close while

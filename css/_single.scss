@@ -366,6 +366,7 @@ $desktop-with: 991px;
         color: var(--main-fk-color);
     }
 }
+
 .tags {
     margin: 10px;
     text-align: center;
@@ -376,5 +377,49 @@ $desktop-with: 991px;
 
     a:hover {
         font-size: 1.3rem;
+    }
+
+}
+
+.wp-comments {
+    font-size: 1.2rem;
+    color: var(--main-fk-color);
+    padding: 10px;
+    text-align: center;
+    p {
+        margin-top: 10px;
+    }
+
+    textarea {
+        width: 80%;
+        font-size: 1.5rem;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 80%;
+    } 
+
+    input[type="submit"] {
+        padding: 10px;
+    } 
+
+    .commentlist {
+        li {
+            margin-top: 10px;
+        }
+    }
+
+    .comment-author {
+        text-align: left;
+        background-color: var(--main-fk-color);
+        color: var(--main-bg-color);
+    }
+
+    .comment-body {
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+        p {
+            padding: 5px;
+            text-align: justify;
+        }
     }
 }

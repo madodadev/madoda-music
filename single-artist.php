@@ -54,6 +54,11 @@ while(have_posts()){
                 <?php the_content(); ?>
             </div>
         <?php endif; ?>
+
+        <div class="wp-comments">
+            <?php comments_template(); ?>
+        </div>
+
     </section>
 <?php
 //close while

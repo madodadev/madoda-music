@@ -160,7 +160,7 @@ function madoda_post_types() {
   register_post_type('blog', array(
     'show_in_rest' => true,
     "has_archive" => true,
-    'supports' => array('title', 'editor', 'excerpt','tags', 'thumbnail'),
+    'supports' => array('title', 'editor', 'excerpt','comments','tags', 'thumbnail'),
     'public' => true,
     'has_archive' => true,
     'labels' => array(
@@ -178,7 +178,7 @@ function madoda_post_types() {
   register_post_type('album', array(
     'show_in_rest' => true,
     "has_archive" => true,
-    'supports' => array('title', 'editor', 'excerpt','tags', 'thumbnail'),
+    'supports' => array('title', 'editor', 'excerpt','comments','tags', 'thumbnail'),
     'public' => true,
     'labels' => array(
       'name' => 'albums',
@@ -195,7 +195,7 @@ function madoda_post_types() {
   register_post_type('playlist', array(
     'show_in_rest' => true,
     "has_archive" => true,
-    'supports' => array('title', 'editor', 'excerpt','tag', 'thumbnail'),
+    'supports' => array('title', 'editor', 'excerpt','comments','tag', 'thumbnail'),
     'public' => true,
     'labels' => array(
       'name' => 'playlists',
@@ -212,7 +212,7 @@ function madoda_post_types() {
   register_post_type('artist', array(
     'show_in_rest' => true,
     "has_archive" => true,
-    'supports' => array('title', 'editor', 'excerpt','title-tag', 'thumbnail'),
+    'supports' => array('title', 'editor', 'excerpt','comments','title-tag', 'thumbnail'),
     'public' => true,
     'labels' => array(
       'name' => 'artists',

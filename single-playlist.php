@@ -151,7 +151,11 @@ while(have_posts()){
     </div> 
 </div>
 
-    </section>
+    <div class="wp-comments">
+        <?php comments_template(); ?>
+    </div>
+
+</section>
 <?php
 //close while
 }

@@ -843,6 +843,51 @@ Tags: upload musics
   font-size: 1.3rem;
 }
 
+.wp-comments {
+  font-size: 1.2rem;
+  color: var(--main-fk-color);
+  padding: 10px;
+  text-align: center;
+}
+
+.wp-comments p {
+  margin-top: 10px;
+}
+
+.wp-comments textarea {
+  width: 80%;
+  font-size: 1.5rem;
+}
+
+.wp-comments input[type="text"] {
+  padding: 10px;
+  width: 80%;
+}
+
+.wp-comments input[type="submit"] {
+  padding: 10px;
+}
+
+.wp-comments .commentlist li {
+  margin-top: 10px;
+}
+
+.wp-comments .comment-author {
+  text-align: left;
+  background-color: var(--main-fk-color);
+  color: var(--main-bg-color);
+}
+
+.wp-comments .comment-body {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.wp-comments .comment-body p {
+  padding: 5px;
+  text-align: justify;
+}
+
 #player {
   background-color: rgba(0, 0, 0, 0.3);
   width: 95%;
