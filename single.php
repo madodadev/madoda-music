@@ -17,7 +17,7 @@ while(have_posts()){
                         <span class="download-count"><span id="download-num"><?php echo mdd_get_download_num()." "?></span> Downloads <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon"></span>
                     <?php endif;?>
                     <?php
-                        if(mdd_get_audio_url() && !mdd_is_download_external_link()){
+                        if(is_music_playable()){
                             mdd_the_music_size();
                             echo "<p><strong class='listen-txt'> ouvir musica </strong></p>";
                             mdd_player(array(

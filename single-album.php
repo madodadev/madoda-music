@@ -28,7 +28,7 @@ while(have_posts()){
                     <?php endif;?>
                     
                     <?php
-                        if(mdd_get_audio_url() && !mdd_is_download_external_link()){
+                        if(is_music_playable()){
                             mdd_player(array(
                                 "previous_post_url"  => mdd_get_previous_post_url(),
                                 "next_post_url"  => mdd_get_next_post_url()

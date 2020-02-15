@@ -1,5 +1,6 @@
 <?php
 require get_theme_file_path('/inc/madoda-functions.php');
+require get_theme_file_path('/inc/music-acess.php');
 require get_theme_file_path('/inc/inc-acf.php');
 require get_theme_file_path('/inc/customizer.php');
 require get_theme_file_path('/inc/mdd-player.php');

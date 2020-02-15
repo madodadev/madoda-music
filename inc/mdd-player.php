@@ -11,7 +11,7 @@ function mdd_player_files() {
     wp_enqueue_script('mdd-player-js', get_theme_file_uri('/js/mdd-player.js'), NULL, '1.0', true);
         
     wp_localize_script('mdd-player-js', 'playerData', array(
-        'song_url' => mdd_get_audio_url(),
+        'song_url' => mdd_get_play_audio_url(),
         'auto_play' => $play
     ));
 }?>
