@@ -329,8 +329,9 @@ function mdd_get_audio_url() {
 function mdd_is_download_external_link() {
     $musicfile = get_field('music_file');
     $musiclink = get_field('music_link');
-    
-    if($musicfile) {
+    $musicDriveLink = get_field('google_drive_link');  
+
+    if($musicfile || $musicDriveLink) {
         return false;
     }else{
         return true;
@@ -459,7 +460,7 @@ function mdd_the_music_list() {
                             <a href="<?php echo $music_link?>" class="artist-and-title" target="_blank"><?php echo("$music_author - $music_title")?></a> 
                         </div>
                         <div class="list-btn">
-                            <a href="<?php echo $music_url?>" class="download-icon" data-music="<?php echo $musicID;?>" target="_blank" download>
+                            <a href="<?php echo mdd_get_download_audio_url()?>" class="download-icon" data-music="<?php echo $musicID;?>" target="_blank" download>
                                 <svg class="list-btn-icon icon-download" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" class=""><g><g>
                                     <path d="M0,390.345c0,55.219,41.338,101.035,95.639,109.882H305.11L194.727,376.046h55.998V250.864h111.023v125.182h55.524   L306.891,500.227h209.471C570.662,491.38,612,445.563,612,390.345c0-48.515-31.936-89.797-76.527-105.097   c-1.614-96.084-82.343-173.474-181.653-173.474c-71.632,0-133.583,40.253-163.181,98.754c-13.993-15.021-34.244-24.48-56.75-24.48   c-42.255,0-76.5,33.271-76.5,74.275c0,10.71,2.337,20.891,6.51,30.099C26.038,308.615,0,346.531,0,390.345z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#444444"/>
                                 </svg>
@@ -549,7 +550,7 @@ function mdd_the_music_list() {
                             <a href="<?php echo $music_link?>" class="artist-and-title" target="_blank"><?php echo("$music_author - $music_title")?></a> 
                         </div>
                         <div class="list-btn">
-                            <a href="<?php echo $music_url?>" class="download-icon" data-music="<?php echo $musicID;?>" target="_blank" download>
+                            <a href="<?php echo mdd_get_download_audio_url()?>" class="download-icon" data-music="<?php echo $musicID;?>" target="_blank" download>
                                 <svg class="list-btn-icon icon-download" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" class=""><g><g>
                                     <path d="M0,390.345c0,55.219,41.338,101.035,95.639,109.882H305.11L194.727,376.046h55.998V250.864h111.023v125.182h55.524   L306.891,500.227h209.471C570.662,491.38,612,445.563,612,390.345c0-48.515-31.936-89.797-76.527-105.097   c-1.614-96.084-82.343-173.474-181.653-173.474c-71.632,0-133.583,40.253-163.181,98.754c-13.993-15.021-34.244-24.48-56.75-24.48   c-42.255,0-76.5,33.271-76.5,74.275c0,10.71,2.337,20.891,6.51,30.099C26.038,308.615,0,346.531,0,390.345z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#444444"/>
                                 </svg>
@@ -588,7 +589,7 @@ function mdd_the_music_list() {
                                 <a href="<?php echo $music_link?>" class="artist-and-title" target="_blank"><?php echo("$music_author - $music_title")?></a> 
                             </div>
                             <div class="list-btn">
-                                <a href="<?php echo $music_url?>" class="download-icon" data-music="<?php echo $musicID;?>" target="_blank" download>
+                                <a href="<?php echo mdd_get_download_audio_url()?>" class="download-icon" data-music="<?php echo $musicID;?>" target="_blank" download>
                                     <svg class="list-btn-icon icon-download" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" class=""><g><g>
                                         <path d="M0,390.345c0,55.219,41.338,101.035,95.639,109.882H305.11L194.727,376.046h55.998V250.864h111.023v125.182h55.524   L306.891,500.227h209.471C570.662,491.38,612,445.563,612,390.345c0-48.515-31.936-89.797-76.527-105.097   c-1.614-96.084-82.343-173.474-181.653-173.474c-71.632,0-133.583,40.253-163.181,98.754c-13.993-15.021-34.244-24.48-56.75-24.48   c-42.255,0-76.5,33.271-76.5,74.275c0,10.71,2.337,20.891,6.51,30.099C26.038,308.615,0,346.531,0,390.345z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#444444"/>
                                     </svg>

@@ -32,3 +32,23 @@ if($musicfile) {
         return $musiclink;
     }  
 }
+
+function mdd_get_download_audio_url() {  
+$musicfile = get_field('music_file');
+$musiclink = get_field('music_link');
+$musicDriveLink = get_field('google_drive_link');  
+
+if($musicfile) {
+        return $musicfile['url'];
+    }elseif($musicDriveLink){ 
+        $driveBase = "https://drive.google.com/uc?authuser=0&id=";
+        if(stristr($musicDriveLink, "?id=")) {
+            $GDriveID = substr(stristr($musicDriveLink, "?id="), 4);
+            return $driveBase.$GDriveID;
+        }else {
+            return $driveBase.$musicDriveLink."-&export=download";
+        }
+    }else {
+        return $musiclink;
+    }  
+}

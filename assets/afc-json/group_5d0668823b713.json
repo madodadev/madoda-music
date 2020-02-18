@@ -3,6 +3,22 @@
     "title": "playlist",
     "fields": [
         {
+            "key": "field_5e47ab8a7a247",
+            "label": "google drive link",
+            "name": "google_drive_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5d2de237e09d4",
             "label": "music file",
             "name": "music_file",
@@ -140,5 +156,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565368006
+    "modified": 1581764388
 }

@@ -27,9 +27,9 @@ while(have_posts()){
                         }
                     ?>
 
-                    <?php if(mdd_get_audio_url()): ?>
+                    <?php if(mdd_get_download_audio_url()): ?>
                         <?php if(mdd_is_download_external_link()):?>
-                            <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php mdd_the_audio_url()?>"  target="_blank">
+                            <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>"  target="_blank">
                                 <p class="download-btn-text">
                                     <strong>Baixar Musica MP3
                                         <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
@@ -39,7 +39,7 @@ while(have_posts()){
                         <?php endif?>
 
                         <?php if(!mdd_is_download_external_link()):?>
-                            <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php mdd_the_audio_url()?>" download="<?php echo mdd_get_download_name()?>">
+                            <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>" download="<?php echo mdd_get_download_name()?>">
                                 <p class="download-btn-text">
                                     <strong>Baixar Musica MP3
                                         <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
@@ -47,7 +47,7 @@ while(have_posts()){
                                 </p>
                             </a>
                         <?php endif;?>
-                    <?php endif;if(!mdd_get_audio_url() && mdd_is_post_have_musicInfo()):?>
+                    <?php endif;if(!mdd_get_download_audio_url() && mdd_is_post_have_musicInfo()):?>
                         <div class="download-btn no-download">
                             <p class="download-btn-text">
                                 <strong>Baixar Musica MP3 [Da que a pouco]</strong>
@@ -84,10 +84,10 @@ while(have_posts()){
             
             <?php mdd_get_musicInfo_ads()?>
 
-            <?php if(mdd_get_audio_url()): ?>
+            <?php if(mdd_get_download_audio_url()): ?>
                 <?php if(mdd_is_download_external_link()):?>
                     <strong class="btn-baixar btn-baixar-pt">
-                        <a class="download-btn" data-music="<?php the_ID();?>" href="<?php mdd_the_audio_url()?>" target="_blank">
+                        <a class="download-btn" data-music="<?php the_ID();?>" href="<?php echo mdd_get_download_audio_url()?>" target="_blank">
                             <?php echo mdd_get_artist()." - ".mdd_get_title()." "?>Download mp3
                         </a> 
                     </strong>
@@ -95,7 +95,7 @@ while(have_posts()){
 
                 <?php if(!mdd_is_download_external_link()):?>
                     <strong class="btn-baixar btn-baixar-pt">
-                        <a class="download-btn" data-music="<?php the_ID();?>" href="<?php mdd_the_audio_url()?>" download="<?php echo mdd_get_download_name()?>">
+                        <a class="download-btn" data-music="<?php the_ID();?>" href="<?php echo mdd_get_download_audio_url()?>" download="<?php echo mdd_get_download_name()?>">
                             <?php echo mdd_get_artist()." - ".mdd_get_title()." "?>Download mp3
                         </a> 
                     </strong>
@@ -145,7 +145,7 @@ while(have_posts()){
     <?php mdd_new_musics(6);?>
 
     <div class="wp-comments">
-        <?php comments_template(); ?>
+        <?php comments_template( ); ?>
     </div>
     </section>
 <?php
