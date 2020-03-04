@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header();?>
 
 <?php 
     $topmusics = new WP_Query(array(
@@ -163,4 +163,5 @@
         </div>
     </div>     
 </section>
+<?php mdd_set_drive_id();?>
 <?php get_footer(); ?>

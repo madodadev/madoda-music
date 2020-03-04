@@ -9,6 +9,7 @@ require get_theme_file_path('/inc/search-route.php');
 require get_theme_file_path('/inc/infinity-scroll.php');
 require get_theme_file_path('/inc/edit-tags.php');
 require get_theme_file_path('/inc/auto-playlist.php');
+require get_theme_file_path('/inc/mdd-functions/add-drive-id.php');
 
 function madoda_files() {
     wp_enqueue_script('main-madoda-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
