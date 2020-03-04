@@ -46,7 +46,8 @@ if($musicfile) {
             $GDriveID = substr(stristr($musicDriveLink, "?id="), 4);
             return $driveBase.$GDriveID;
         }else {
-            return $driveBase.$musicDriveLink."-&export=download";
+            // return $driveBase.$musicDriveLink."-&export=download";
+            return $driveBase.$musicDriveLink."&export=download";
         }
     }else {
         return $musiclink;
