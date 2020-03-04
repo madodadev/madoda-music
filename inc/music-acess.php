@@ -44,9 +44,8 @@ if($musicfile) {
         $driveBase = "https://drive.google.com/uc?authuser=0&id=";
         if(stristr($musicDriveLink, "?id=")) {
             $GDriveID = substr(stristr($musicDriveLink, "?id="), 4);
-            return $driveBase.$GDriveID;
+            return $driveBase.$GDriveID."&export=download";
         }else {
-            // return $driveBase.$musicDriveLink."-&export=download";
             return $driveBase.$musicDriveLink."&export=download";
         }
     }else {
