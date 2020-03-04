@@ -55,12 +55,6 @@ while(have_posts()){
                                 </p>
                             </a>
                         <?php endif;?>
-                    <?php endif;if(!mdd_get_download_audio_url() && mdd_is_post_have_musicInfo()):?>
-                        <div class="download-btn no-download">
-                            <p class="download-btn-text">
-                                <strong>baixar album [Da que a pouco]</strong>
-                            </p>
-                        </div>
                     <?php endif;?>
                     <?php dynamic_sidebar( 'single-top-sidebar' ); ?>
                 </div>
