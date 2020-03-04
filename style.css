@@ -799,7 +799,7 @@ Tags: upload musics
   opacity: .8;
 }
 
-#single .single-sidebar-top img {
+#single .single-sidebar-top img.music-ad {
   width: 30% !important;
   height: 100% !important;
   height: 100px;
