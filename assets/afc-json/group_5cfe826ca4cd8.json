@@ -6,8 +6,8 @@
             "key": "field_5e47ce5cbfa27",
             "label": "google drive link",
             "name": "google_drive_link",
-            "type": "url",
-            "instructions": "",
+            "type": "textarea",
+            "instructions": "use && para separar os ids ex: id1&&id2&&id3",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,7 +16,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5cf3d68342090",
@@ -113,5 +116,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1581764232
+    "modified": 1583562441
 }
