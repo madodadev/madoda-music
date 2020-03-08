@@ -149,7 +149,6 @@ function madoda_adjust_queries($query) {
 function on_post_publish( $ID, $post ) {
   editTags($post);
   autoArtistPlaylist($post);
-  mddAddMoreDriveIDS();
 }
 add_action(  'publish_post',  'on_post_publish', 10, 2 );
 
