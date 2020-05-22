@@ -3,6 +3,22 @@
     "title": "music content",
     "fields": [
         {
+            "key": "field_5ebf2604b6250",
+            "label": "download youtube url",
+            "name": "download_youtube_url",
+            "type": "url",
+            "instructions": "use madoda manager to download music via youtube",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "youtube url"
+        },
+        {
             "key": "field_5e47ce5cbfa27",
             "label": "google drive link",
             "name": "google_drive_link",
@@ -80,6 +96,37 @@
             "placeholder": ""
         },
         {
+            "key": "field_5ea88f7fb57d7",
+            "label": "Download via youtube",
+            "name": "download_via_youtube",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cfe82a6c8e2f",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1:Yes": "1:Yes",
+                "0:No": "0:No"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": 1,
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_5cd1ab146ea8a",
             "label": "Lyrics",
             "name": "lyrics",
@@ -116,5 +163,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583562441
+    "modified": 1590179067
 }
