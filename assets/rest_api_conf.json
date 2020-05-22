@@ -1,0 +1,7 @@
+{
+    "auth": {
+        "user": "@madoda_rest_api@",
+        "pswd": "@pswd_#madoda_rest_$api"
+    },
+    "allowedAddress": ["172.19.0.1","7877"]
+}
