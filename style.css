@@ -538,6 +538,7 @@ Tags: upload musics
 #single .top-info .top-single-wrapper .single-info .single-sidebar-top {
   padding: 0;
   margin: 5px;
+  overflow: unset;
 }
 
 #single .top-info .top-single-wrapper .single-info .single-sidebar-top .wp-audio-shortcode {
@@ -813,7 +814,7 @@ Tags: upload musics
   float: right;
 }
 
-#single .widget {
+.widget {
   overflow: hidden;
 }
 
