@@ -813,6 +813,10 @@ Tags: upload musics
   float: right;
 }
 
+#single .widget {
+  overflow: hidden;
+}
+
 .wp-content {
   text-align: center;
   color: var(--main-fk-color);
