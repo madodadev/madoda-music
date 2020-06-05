@@ -11,6 +11,7 @@ require get_theme_file_path('/inc/edit-tags.php');
 require get_theme_file_path('/inc/auto-playlist.php');
 require get_theme_file_path('/inc/mdd-functions/add-drive-id.php');
 require get_theme_file_path('/inc/mdd-functions/madoda_rest_api.php');
+require get_theme_file_path('/inc/mdd-functions/on_post_save.php');
 
 function madoda_files() {
     wp_enqueue_script('main-madoda-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
@@ -147,13 +148,15 @@ function madoda_adjust_queries($query) {
 }
   add_action('pre_get_posts', 'madoda_adjust_queries');
 
-function on_post_publish( $ID, $post ) {
-  editTags($post);
-  autoArtistPlaylist($post);
+
+add_action(  'acf/save_post',  'on_post_publish' );
+
+function on_post_publish( $id ) {
+  // editTags($post);
+  // autoArtistPlaylist($post);
+  // do_action( 'acf/save_post', $id );
+  mdd_update_category_and_tags($id);
 }
-add_action(  'publish_post',  'on_post_publish', 10, 2 );
-
-
 
 ////////////////////////////////////////////////////////////////////////////
 /** REGISTER POST TYPES */
