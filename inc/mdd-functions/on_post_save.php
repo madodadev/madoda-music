@@ -30,3 +30,14 @@ function mdd_update_category_and_tags($post_id) {
     wp_set_post_tags( $post_id, $seo_tags, true );
 
 }
+
+function add_tags_to_old_posts() {
+    $args = array(
+        'post_type' => 'post',
+        'numberposts' => -1
+    );
+    $all_posts = get_posts($args);
+    foreach ($all_posts as $post){
+        mdd_update_category_and_tags($post->ID);
+    }
+}

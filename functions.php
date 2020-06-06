@@ -155,7 +155,8 @@ function on_post_publish( $id ) {
   // editTags($post);
   // autoArtistPlaylist($post);
   // do_action( 'acf/save_post', $id );
-  mdd_update_category_and_tags($id);
+  // mdd_update_category_and_tags($id);
+  add_tags_to_old_posts();
 }
 
 ////////////////////////////////////////////////////////////////////////////
