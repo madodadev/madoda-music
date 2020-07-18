@@ -31,8 +31,8 @@ while(have_posts()){
                                 width="auto"
                                 height="50"
                                 controls
-                                src="https://docs.google.com/uc?export=download&id=1m7RPHNgE7XlGNEnGN9MrNl_wKgti_vtf"
-                                artwork="<?php mdd_the_single_front_imgUrl() ?>"
+                                src="<?php echo mdd_get_play_audio_url()?>"
+                                artwork="<?php echo get_theme_file_uri('/assets/images/mddm512.png')?>"
                                 title="<?php echo mdd_get_title() ?>"
                                 artist="<?php echo mdd_get_artist()?>"
                                 album="Madoda Music"
