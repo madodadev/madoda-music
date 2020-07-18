@@ -17,13 +17,31 @@ while(have_posts()){
                         <span class="download-count"><span id="download-num"><?php echo mdd_get_download_num()." "?></span> Downloads <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon"></span>
                     <?php endif;?>
                     <?php
-                        if(is_music_playable()){
-                            mdd_the_music_size();
-                            echo "<p><strong class='listen-txt'> ouvir musica </strong></p>";
-                            mdd_player(array(
-                                "previous_post_url"  => mdd_get_previous_post_url(),
-                                "next_post_url"  => mdd_get_next_post_url()
-                            ));
+                        if( !mddm_is_amp() ){
+                            if(is_music_playable()){
+                                mdd_the_music_size();
+                                echo "<p><strong class='listen-txt'> ouvir musica </strong></p>";
+                                mdd_player(array(
+                                    "previous_post_url"  => mdd_get_previous_post_url(),
+                                    "next_post_url"  => mdd_get_next_post_url()
+                                ));
+                            }
+                        }else{?>
+                            <amp-audio
+                                width="auto"
+                                height="50"
+                                controls
+                                src="https://docs.google.com/uc?export=download&id=1m7RPHNgE7XlGNEnGN9MrNl_wKgti_vtf"
+                                artwork="<?php mdd_the_single_front_imgUrl() ?>"
+                                title="<?php echo mdd_get_title() ?>"
+                                artist="<?php echo mdd_get_artist()?>"
+                                album="Madoda Music"
+                                >
+                                <div fallback>
+                                    <p>Não foi possivel apresentar o leitor de audio.</p>
+                                </div>
+                            </amp-audio>
+                        <?php
                         }
                     ?>
 

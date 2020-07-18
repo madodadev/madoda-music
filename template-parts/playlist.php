@@ -1,7 +1,13 @@
 <li>    
     <div class="card-box-playList">
         <a href="<?php the_permalink(); ?>">
-            <img class="lazy" src="<?php mdd_the_placeholderSvg() ?>" data-src="<?php mdd_the_playlistDesplay_imgUrl();?>" data-srcset="<?php mdd_the_playlistDesplay_imgUrl();?> 2x, <?php mdd_the_playlistDesplay_imgUrl();?> 1x" alt="<?php echo "baixar musica de ".get_the_title().'[IMG]'?>">
+            <?php if (!mddm_is_amp()):?>
+                <img class="lazy" src="<?php mdd_the_placeholderSvg() ?>" data-src="<?php mdd_the_playlistDesplay_imgUrl();?>" data-srcset="<?php mdd_the_playlistDesplay_imgUrl();?> 2x, <?php mdd_the_playlistDesplay_imgUrl();?> 1x" alt="<?php echo "baixar musica de ".get_the_title().'[IMG]'?>">
+            <?php endif; ?>
+
+            <?php if (mddm_is_amp()):?>
+                <img src="<?php mdd_the_playlistDesplay_imgUrl() ?>" alt="<?php echo "baixar musica de ".get_the_title().'[IMG]'?>">
+            <?php endif; ?>
         </a>
         <div class="info">
             <abbr title="<?php echo mdd_get_title();?>">

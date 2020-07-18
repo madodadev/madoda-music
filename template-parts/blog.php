@@ -1,6 +1,12 @@
 <article class="article">
     <header class="header">
-        <img class="blog-img lazy" src="<?php mdd_the_placeholderSvg() ?>" data-src="<?php echo get_the_post_thumbnail_url();?>" data-srcset="<?php echo get_the_post_thumbnail_url();?> 2x, <?php echo get_the_post_thumbnail_url();?> 1x" alt="<?php the_title()?>">
+        <?php if (!mddm_is_amp()):?>
+            <img class="blog-img lazy" src="<?php mdd_the_placeholderSvg() ?>" data-src="<?php echo get_the_post_thumbnail_url();?>" data-srcset="<?php echo get_the_post_thumbnail_url();?> 2x, <?php echo get_the_post_thumbnail_url();?> 1x" alt="<?php the_title()?>">
+        <?php endif; ?>
+        
+        <?php if (mddm_is_amp()):?>
+            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php the_title()?>">
+        <?php endif; ?>
     </header>
     
     <div class="blog-content">

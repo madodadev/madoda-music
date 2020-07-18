@@ -26,6 +26,9 @@ function madoda_files() {
 }
 add_action('wp_enqueue_scripts', 'madoda_files');
 
+function mddm_is_amp() {
+  return function_exists( "is_amp_endpoint" ) && is_amp_endpoint();
+}
 
 function madoda_custom_menu() {
     register_nav_menu('category-menu',__( 'Category Menu' ));
