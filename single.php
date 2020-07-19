@@ -17,31 +17,31 @@ while(have_posts()){
                         <span class="download-count"><span id="download-num"><?php echo mdd_get_download_num()." "?></span> Downloads <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon"></span>
                     <?php endif;?>
                     <?php
-                        if( !mddm_is_amp() ){
-                            if(is_music_playable()){
+                        if( is_music_playable() ){
+                            if( !mddm_is_amp() ){
                                 mdd_the_music_size();
                                 echo "<p><strong class='listen-txt'> ouvir musica </strong></p>";
                                 mdd_player(array(
                                     "previous_post_url"  => mdd_get_previous_post_url(),
                                     "next_post_url"  => mdd_get_next_post_url()
                                 ));
+                            }else{?>
+                                <amp-audio
+                                    width="auto"
+                                    height="50"
+                                    controls
+                                    src="<?php echo mdd_get_play_audio_url()?>"
+                                    artwork="<?php echo get_theme_file_uri('/assets/images/mddm512.png')?>"
+                                    title="<?php echo mdd_get_title() ?>"
+                                    artist="<?php echo mdd_get_artist()?>"
+                                    album="Madoda Music"
+                                    >
+                                    <div fallback>
+                                        <p>Não foi possivel apresentar o leitor de audio.</p>
+                                    </div>
+                                </amp-audio>
+                            <?php
                             }
-                        }else{?>
-                            <amp-audio
-                                width="auto"
-                                height="50"
-                                controls
-                                src="<?php echo mdd_get_play_audio_url()?>"
-                                artwork="<?php echo get_theme_file_uri('/assets/images/mddm512.png')?>"
-                                title="<?php echo mdd_get_title() ?>"
-                                artist="<?php echo mdd_get_artist()?>"
-                                album="Madoda Music"
-                                >
-                                <div fallback>
-                                    <p>Não foi possivel apresentar o leitor de audio.</p>
-                                </div>
-                            </amp-audio>
-                        <?php
                         }
                     ?>
 
