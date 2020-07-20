@@ -238,3 +238,5 @@ function madoda_post_types() {
 }
 
 add_action('init', 'madoda_post_types');
+
+add_filter( 'wpseo_json_ld_output', '__return_false' );
