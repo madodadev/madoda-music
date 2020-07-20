@@ -239,4 +239,8 @@ function madoda_post_types() {
 
 add_action('init', 'madoda_post_types');
 
-add_filter( 'wpseo_json_ld_output', '__return_false' );
+function disable_yoast_schema_data($data){
+	$data = array();
+	return $data;
+}
+add_filter('wpseo_json_ld_output', 'disable_yoast_schema_data', 10, 1);
