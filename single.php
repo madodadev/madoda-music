@@ -6,7 +6,14 @@ while(have_posts()){
     <section class="main" id="single">
         <div class="container">
             <div class="top-info" >
-                <div class="bg-img"><img class="lazy" name="<?php echo mdd_get_artist()." - ".mdd_get_title()?>" src="<?php mdd_the_placeholderSvg()?>" data-src="<?php mdd_the_single_back_imgUrl();?>" data-srcset="<?php mdd_the_single_back_imgUrl();?> 2x, <?php mdd_the_single_back_imgUrl();?> 1x" alt="<?php echo mdd_get_artist()." - ".mdd_get_title()?>"></div>
+                <div class="bg-img">
+                    <?php if( !mddm_is_amp() ):?>
+                    <img class="lazy" name="<?php echo mdd_get_artist()." - ".mdd_get_title()?>" src="<?php mdd_the_placeholderSvg()?>" data-src="<?php mdd_the_single_back_imgUrl();?>" data-srcset="<?php mdd_the_single_back_imgUrl();?> 2x, <?php mdd_the_single_back_imgUrl();?> 1x" alt="<?php echo mdd_get_artist()." - ".mdd_get_title()?> background">
+                    <?php endif;?>
+                    <?php if( mddm_is_amp() ):?>
+                        <img src="<?php mdd_the_single_back_imgUrl();?>" alt="<?php echo mdd_get_artist()." - ".mdd_get_title()?> background">
+                    <?php endif; ?>
+                </div>
                 <div class="top-single-wrapper">
                 <img name="<?php the_title()?>" id="post-thumbnail" src="<?php mdd_the_single_front_imgUrl()?>" alt="<?php the_title()?>">
                 
