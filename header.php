@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <?php mddm_the_amp_head();?>
-    <?php wp_head(); ?>
+    <?php if( !mddm_is_amp() ){ wp_head(); }?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
