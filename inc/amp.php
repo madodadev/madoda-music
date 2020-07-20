@@ -8,7 +8,7 @@ function mddm_the_amp_head() {
                 "@type": "MusicGroup",
                 "headline": "<?php echo get_the_title()?>",
                 "image": [
-                "<?php echo get_the_post_thumbnail_url()?>"
+                "<?php mdd_the_single_back_imgUrl();?>"
                 ]            
             }
         </script>
