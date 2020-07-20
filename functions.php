@@ -1,4 +1,8 @@
 <?php
+function mddm_is_amp() {
+  return function_exists( "is_amp_endpoint" ) && is_amp_endpoint();
+}
+
 require get_theme_file_path('/inc/madoda-functions.php');
 require get_theme_file_path('/inc/music-acess.php');
 require get_theme_file_path('/inc/inc-acf.php');
@@ -27,9 +31,6 @@ function madoda_files() {
 }
 add_action('wp_enqueue_scripts', 'madoda_files');
 
-function mddm_is_amp() {
-  return function_exists( "is_amp_endpoint" ) && is_amp_endpoint();
-}
 
 function madoda_custom_menu() {
     register_nav_menu('category-menu',__( 'Category Menu' ));

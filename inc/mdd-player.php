@@ -16,41 +16,65 @@ function mdd_player_files() {
     ));
 }?>
 <?php
-add_action('wp_enqueue_scripts', 'mdd_player_files');
+//add scripts if not amp
+if( !mddm_is_amp() ){
+    add_action('wp_enqueue_scripts', 'mdd_player_files');
+}
+
 function mdd_player($args) {
-    if($args['previous_post_url']){
-        $previous_post_url = $args['previous_post_url'];
-    }
-    
-    if($args['next_post_url']){
-        $next_post_url = $args['next_post_url'];
-    }?>
-    
-    <div id="player">
-        <div class="header">
-            <div id="music-btn">
-                <a href="<?php echo $previous_post_url."?play=1"?>"><div class="play-icons"><img class="previous" src="<?php echo get_theme_file_uri('/assets/icons/previous.png')?>" alt="previous"></div></a>
-                    <div class="play-icons"><img id="play_pause" data-music="<?php the_ID();?>" src="<?php echo get_theme_file_uri('/assets/icons/play.png')?>" alt="play_pause"></div>
-                <a href="<?php echo $next_post_url."?play=1"?>"><div class="play-icons"><img class="next" src="<?php echo get_theme_file_uri('/assets/icons/next.png')?>" alt="next"></div></a>
+    if(!mddm_is_amp()):
+        if($args['previous_post_url']){
+            $previous_post_url = $args['previous_post_url'];
+        }
+        
+        if($args['next_post_url']){
+            $next_post_url = $args['next_post_url'];
+        }?>
+        
+        <div id="player">
+            <div class="header">
+                <div id="music-btn">
+                    <a href="<?php echo $previous_post_url."?play=1"?>"><div class="play-icons"><img class="previous" src="<?php echo get_theme_file_uri('/assets/icons/previous.png')?>" alt="previous"></div></a>
+                        <div class="play-icons"><img id="play_pause" data-music="<?php the_ID();?>" src="<?php echo get_theme_file_uri('/assets/icons/play.png')?>" alt="play_pause"></div>
+                    <a href="<?php echo $next_post_url."?play=1"?>"><div class="play-icons"><img class="next" src="<?php echo get_theme_file_uri('/assets/icons/next.png')?>" alt="next"></div></a>
+                </div>
+            
+                <div class="volume-cont">
+                    <div class="play-icons"><img class="speaker" src="<?php echo get_theme_file_uri('/assets/icons/speaker3.png')?>" alt="speaker"></div>
+                    <div id="volume">
+                        <div class="volume-range"><input type="range"  id="volume-bar" min="0" max="100" value="100" step="1"></div>
+                    </div>
+                </div>
+                
             </div>
-           
-            <div class="volume-cont">
-                <div class="play-icons"><img class="speaker" src="<?php echo get_theme_file_uri('/assets/icons/speaker3.png')?>" alt="speaker"></div>
-                <div id="volume">
-                    <div class="volume-range"><input type="range"  id="volume-bar" min="0" max="100" value="100" step="1"></div>
+
+            <div id="music-progress">
+                <div class="containerp">
+                        <div id="start-time" class="time">0:00</div>
+                        <div class="progress-range"><input type="range"  id="seek-bar" min="0" max="100" value="0" step="1"></div>
+                        <div id="end-time" class="time">0:00</div>
                 </div>
             </div>
-            
-        </div>
 
-        <div id="music-progress">
-            <div class="containerp">
-                    <div id="start-time" class="time">0:00</div>
-                    <div class="progress-range"><input type="range"  id="seek-bar" min="0" max="100" value="0" step="1"></div>
-                    <div id="end-time" class="time">0:00</div>
+        </div>
+    <?php endif;?>
+
+    <?php if( mddm_is_amp() ):?>
+        <amp-audio
+            width="auto"
+            height="50"
+            controls
+            src="<?php echo mdd_get_play_audio_url()?>"
+            artwork="<?php echo get_theme_file_uri('/assets/images/mddm512.png')?>"
+            title="<?php echo mdd_get_title() ?>"
+            artist="<?php echo mdd_get_artist()?>"
+            album="Madoda Music"
+            >
+            <div fallback>
+                <p>Não foi possivel apresentar o leitor de audio.</p>
             </div>
-        </div>
+        </amp-audio>
+    <?php endif;?>
 
-    </div>
 <?php
 }?>
