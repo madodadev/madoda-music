@@ -46,25 +46,39 @@ while(have_posts()){
                     ?>
 
                     <?php if(mdd_get_download_audio_url()): ?>
-                        <?php if(mdd_is_download_external_link()):?>
-                            <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>"  target="_blank">
-                                <p class="download-btn-text">
-                                    <strong>Baixar Musica MP3
-                                        <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
-                                    </strong>
-                                </p>
-                            </a>
-                        <?php endif?>
+                        <?php if (!mddm_is_amp()): ?>
+                        
+                            <?php if(mdd_is_download_external_link()):?>
+                                <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>"  target="_blank">
+                                    <p class="download-btn-text">
+                                        <strong>Baixar Musica MP3
+                                            <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
+                                        </strong>
+                                    </p>
+                                </a>
+                            <?php endif?>
 
-                        <?php if(!mdd_is_download_external_link()):?>
-                            <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>" download="<?php echo mdd_get_download_name()?>">
-                                <p class="download-btn-text">
-                                    <strong>Baixar Musica MP3
-                                        <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
-                                    </strong>
-                                </p>
+                            <?php if(!mdd_is_download_external_link()):?>
+                                <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>" download="<?php echo mdd_get_download_name()?>">
+                                    <p class="download-btn-text">
+                                        <strong>Baixar Musica MP3
+                                            <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
+                                        </strong>
+                                    </p>
+                                </a>
+                            <?php endif;?>
+
+                        <?php endif; //end if not mdd_is_amp()?> 
+                        <?php if( mddm_is_amp() ): ?>
+                            <a id="download-btn" class="download-btn" href="<?php echo mdd_get_download_audio_url()?>"  target="_blank">
+                                    <p class="download-btn-text">
+                                        <strong>Baixar Musica MP3
+                                            <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
+                                        </strong>
+                                    </p>
                             </a>
-                        <?php endif;?>
+                        <?php endif; ?>
+
                     <?php endif;if(!mdd_get_download_audio_url() && mdd_is_post_have_musicInfo()):?>
                         <div class="download-btn no-download">
                             <p class="download-btn-text">

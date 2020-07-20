@@ -12,7 +12,7 @@ function mddm_the_amp_head() {
                 "byArtist":"<?php echo mdd_get_artist()?>",
                 "contentURL":"<?php the_permalink(); ?>",
                 "image": [
-                "<?php mdd_the_single_front_imgUrl()?>"
+                "<?php echo get_the_post_thumbnail_url()?>"
                 ]            }
         </script>
         <?php
