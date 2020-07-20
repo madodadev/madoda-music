@@ -12,6 +12,7 @@ require get_theme_file_path('/inc/auto-playlist.php');
 require get_theme_file_path('/inc/mdd-functions/add-drive-id.php');
 require get_theme_file_path('/inc/mdd-functions/madoda_rest_api.php');
 require get_theme_file_path('/inc/mdd-functions/on_post_save.php');
+require get_theme_file_path('/inc/amp.php');
 
 function madoda_files() {
     wp_enqueue_script('main-madoda-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
