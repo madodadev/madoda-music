@@ -15,7 +15,7 @@ while(have_posts()){
                     <?php endif; ?>
                 </div>
                 <div class="top-single-wrapper">
-                <img name="<?php the_title()?>" id="post-thumbnail" src="<?php mdd_the_single_front_imgUrl()?>" alt="<?php the_title()?>">
+                <img id="post-thumbnail" src="<?php mdd_the_single_front_imgUrl()?>" alt="<?php the_title()?>">
                 
                 <div class="single-info">
                         <div class="author"><?php echo mdd_get_artist()?></div>
