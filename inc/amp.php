@@ -1,6 +1,6 @@
 <?php
 
-function mddm_the_amp_head() {
+function mddm_head_post_structure() {
     if(  is_single() AND in_array(get_post_type(), ['post','album','playlist'])  ){?>
         <script type="application/ld+json">
             {
