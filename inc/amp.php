@@ -23,15 +23,15 @@ function mddm_head_post_structure() {
         $schema = array(
             "@context" => "http://schema.org",
             "@type" => "MusicGroup",
-            "track" => array(
+            "track" => array([
                 "@type" => "MusicRecording",
                 "audio" => get_the_permalink(),
                 "url" => get_the_permalink()
-            )
+            ])
         );
 
         if ( get_comments_number() ) {
-            $schema["track"]["interactionStatistic"] = array(
+            $schema["track"][0]["interactionStatistic"] = array(
                 "@type" => "InteractionCounter",
                 "interactionType" => get_the_permalink(),
                 "userInteractionCount" => get_comments_number()
@@ -39,12 +39,12 @@ function mddm_head_post_structure() {
         }
 
         if( get_the_category()[0] ) {
-            $gener = get_the_category()[0]->name;
-            $schema["gener"] = $gener;
+            $genre = get_the_category()[0]->name;
+            $schema["genre"] = $genre;
         }
 
         if( mdd_get_artist() AND mdd_get_title() ) {
-            $schema["track"]["name"] = mdd_get_artist()." - ".mdd_get_title();
+            $schema["track"][0]["name"] = mdd_get_artist()." - ".mdd_get_title();
             $schema["name"] = mdd_get_artist()." - ".mdd_get_title();
         
         }else {
@@ -56,11 +56,19 @@ function mddm_head_post_structure() {
         }
 
         if( get_field('youtube_video_url') ) {
+            $video_id = substr(stristr(get_field('youtube_video_url'), 'v='), 2);
             $video_schema = array(
                 "@type" => "VideoObject",
                 "url" => get_the_permalink(),
                 "contentUrl" => get_field('youtube_video_url'),
-                "embedUrl" => get_the_permalink()
+                "embedUrl" => get_the_permalink(),
+                "uploadDate" => get_the_date("c"),
+                "thumbnailUrl" => [
+                    "https://img.youtube.com/vi/$video_id/0.jpg",
+                    "https://img.youtube.com/vi/$video_id/1.jpg",
+                    "https://img.youtube.com/vi/$video_id/2.jpg",
+                    "https://img.youtube.com/vi/$video_id/3.jpg"
+                ]
             );
 
             if( mdd_get_artist() AND mdd_get_title() ){
@@ -68,16 +76,16 @@ function mddm_head_post_structure() {
                 $video_schema["description"] = "video de " .mdd_get_artist()." com o titlo ".mdd_get_title();
             }
 
-            if( get_images_url() ) {
-                $video_schema["thumbnailUrl"] = get_images_url();
-            }
+            // if( get_images_url() ) {
+            //     $video_schema["thumbnailUrl"] = get_images_url();
+            // }
 
             $schema["subjectOf"] = $video_schema;
         }
             
     ?>    
         <script type="application/ld+json">
-            <?php echo json_encode($schema); ?>
+            <?php echo json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
         </script>
     <?php
     }else {
@@ -90,8 +98,8 @@ function mddm_head_post_structure() {
                 "@type" => "WebPage",
                 "@id" => get_the_permalink()
             ),
-            "datePublished" => get_the_date("y-m-dTH:m:s"),
-            "dateModified" => get_the_modified_date( "y-m-dTH:m:s" ),
+            "datePublished" => get_the_date("c"),
+            "dateModified" => get_the_modified_date( "c" ),
             "author" => array(
                 "@type" => "Person",
                 "name" => get_the_author()
