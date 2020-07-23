@@ -41,6 +41,7 @@ function madoda_custom_menu() {
 function madoda_features() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support( 'amp' );
     add_theme_support('widgets');
     add_image_size('desplay', 124, 124, true);
     add_image_size('playlistDesplay', 150, 124, true);
