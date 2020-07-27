@@ -102,17 +102,22 @@ function mddm_head_post_structure() {
             "dateModified" => get_the_modified_date( "c" ),
             "author" => array(
                 "@type" => "Person",
-                "name" => get_the_author()
+                "name" => get_the_author() ? get_the_author() : get_bloginfo( "name" )
             ),
             "publisher" => array(
                 "@type" => "Organization",
-                "name" => get_the_author(),
+                "name" => get_bloginfo( "name" ),
                 "logo" => array(
                     "@type" => "ImageObject",
                     "url" =>  get_theme_file_uri("/assets/images/mddm512.png")
                 )
             )
         );
+
+        if(!get_the_permalink()) {
+            global $wp;
+            $schema["mainEntityOfPage"]["@id"] = home_url( $wp->request );
+        }
         
         if( get_images_url() ) {
             $schema["image"] = get_images_url();
