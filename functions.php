@@ -240,10 +240,10 @@ function madoda_post_types() {
 
 add_action('init', 'madoda_post_types');
 
-function disable_yoast_schema_data($data){
-	$data = array();
-	return $data;
-}
-add_filter('wpseo_json_ld_output', 'disable_yoast_schema_data', 10, 1);
+// function disable_yoast_schema_data($data){
+// 	$data = array();
+// 	return $data;
+// }
+// add_filter('wpseo_json_ld_output', 'disable_yoast_schema_data', 10, 1);
 
 require get_theme_file_path('/inc/clean_wp.php');
