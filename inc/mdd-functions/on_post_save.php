@@ -31,6 +31,19 @@ function mdd_update_category_and_tags($post_id) {
 
 }
 
+function mdd_add_post_thumbnail($post_id) {
+    if ( !get_post_thumbnail_id( $post_id) ) {
+        $artist_id = mdd_get_artist_id($post_id);
+        if( get_post_thumbnail_id($artist_id) ) {
+            $artist_tumb_id = get_post_thumbnail_id( $artist_id );
+            set_post_thumbnail( $post_id, $artist_tumb_id );
+        }
+    }
+}
+
+/*=========================================================== */
+/*=  Run just to update old/all posts                         */
+/*=========================================================== */
 function add_tags_to_old_posts() {
     $args = array(
         'post_type' => 'post',
@@ -39,5 +52,16 @@ function add_tags_to_old_posts() {
     $all_posts = get_posts($args);
     foreach ($all_posts as $post){
         mdd_update_category_and_tags($post->ID);
+    }
+}
+
+function mdd_add_post_thumbnail_all_posts($post_id) {
+    $args = array(
+        'post_type' => 'post',
+        'numberposts' => -1
+    );
+    $all_posts = get_posts($args);
+    foreach ($all_posts as $post){
+        mdd_add_post_thumbnail($post->ID);
     }
 }
