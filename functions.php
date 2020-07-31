@@ -162,8 +162,7 @@ function on_post_publish( $id ) {
   // autoArtistPlaylist($post);
   // do_action( 'acf/save_post', $id );
   mdd_update_category_and_tags($id);
-  // mdd_add_post_thumbnail($id);
-  mdd_add_post_thumbnail_all_posts($id);
+  mdd_add_post_thumbnail($id);
   // add_tags_to_old_posts();
 }
 
@@ -242,10 +241,10 @@ function madoda_post_types() {
 
 add_action('init', 'madoda_post_types');
 
-function disable_yoast_schema_data($data){
-	$data = array();
-	return $data;
-}
-add_filter('wpseo_json_ld_output', 'disable_yoast_schema_data', 10, 1);
+// function disable_yoast_schema_data($data){
+// 	$data = array();
+// 	return $data;
+// }
+// add_filter('wpseo_json_ld_output', 'disable_yoast_schema_data', 10, 1);
 
 require get_theme_file_path('/inc/clean_wp.php');
