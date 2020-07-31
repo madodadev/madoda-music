@@ -111,8 +111,8 @@ function mdd_the_artists() {
  * |>>>>>>>>>>>>>>>>>>> [return All Artists Names] >>>>>>>>>>>>>>>|
  * ============================================================
  */
-function mdd_get_artists() {
-    $artists = get_field('artist');
+function mdd_get_artists($post_id = NULL) {
+    $artists = $post_id ? get_field('artist', $post_id) : get_field('artist');
     $artists_num = (count($artists));
     
     if($artists_num >= 2){
@@ -138,7 +138,8 @@ function mdd_get_artists() {
 function mdd_the_artist_id() {
     echo get_field('artist')[0]->ID;
 }
-function mdd_get_artist_id() {
+function mdd_get_artist_id($post_id=NULL) {
+    if($post_id) return get_field('artist', $post_id)[0]->ID;
     return get_field('artist')[0]->ID;
 }
 
