@@ -181,7 +181,7 @@ while(have_posts()){
     <div class="tags">
         <?php the_tags();?>
     </div>
-    <?php mdd_new_musics(6);?>
+    <?php mdd_new_musics(12);?>
 
     <div class="wp-comments">
         <?php comments_template( ); ?>
