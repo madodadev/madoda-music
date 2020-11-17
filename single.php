@@ -77,7 +77,7 @@ while(have_posts()){
 
                         <?php endif; //end if not mdd_is_amp()?> 
                         <?php if( mddm_is_amp() ): ?>
-                            <a id="download-btn" class="download-btn" href="<?php echo site_url("/download")."?of=".get_the_ID()?>">
+                            <a id="download-btn" class="download-btn" href="<?php echo site_url("/mddm-download")."?of=".get_the_ID()?>">
                                     <p class="download-btn-text">
                                         <strong>Baixar Musica MP3
                                             <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon">
