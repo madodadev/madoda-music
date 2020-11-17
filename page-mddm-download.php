@@ -127,7 +127,7 @@ $download_music = new WP_Query(array(
                 if( mdd_download != "downloaded") {
                     download_btn.click();
                 }
-            }, 3000);
+            }, 5000);
             
             
         </script>
