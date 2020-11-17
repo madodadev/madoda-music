@@ -52,7 +52,7 @@ $download_music = new WP_Query(array(
                 </p>
             </a>
             </dev>
-            <?php mdd_get_ads();?>
+            <?php dynamic_sidebar( 'single-top-sidebar' ); ?>
             <div class="topmusic posts-cont">
                 <div class="header">
                 <?php madoda_scroll_card_header(array(
@@ -76,7 +76,7 @@ $download_music = new WP_Query(array(
             
             </div>
 
-            <?php mdd_get_musicInfo_ads()?>
+            <?php dynamic_sidebar( 'music-info-ads-sidebar' ); ?>
             
             <div class="Novas posts-cont">
                 <span class="cate_name"><a href="<?php echo site_url("/musics")?>">Novas Musicas</a></span>
@@ -92,7 +92,7 @@ $download_music = new WP_Query(array(
                 <div class="see-more-list"><a href="<?php echo site_url("/musics")?>">ver Todas</a></div>
             </div>
 
-            <?php mdd_get_ads();?>
+            <?php dynamic_sidebar( 'music-info-ads-sidebar' ); ?>
 
             <div class="topauthor posts-cont">
                 <div class="header">
