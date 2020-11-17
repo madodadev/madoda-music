@@ -42,6 +42,9 @@ $download_music = new WP_Query(array(
             <h2 class="title"><?php echo mdd_get_artist()." ". mdd_the_title()?></h2>
             <?php dynamic_sidebar( 'single-top-sidebar' ); ?>
             <audio controls src="<?php echo mdd_get_play_audio_url()?>"></audio>
+            <?php if(mdd_get_download_num() > 50): ?>
+                <p class="download-count"><span id="download-num"><?php echo mdd_get_download_num()." "?></span> Downloads <img class="download-icon" src="<?php echo get_theme_file_uri('/assets/icons/download.svg')?>" alt="download icon"></p>
+            <?php endif;?>
             <p style='font-size:20px'>Se o downlaod não iniciar automaticamente dentro de alguns segundos</p>
             <a id="download-btn" class="download-btn" data_music="<?php the_ID();?>" data_artist="<?php mdd_the_artist_id()?>"  href="<?php echo mdd_get_download_audio_url()?>" traget="_blank">
                 <p class="download-btn-text">
