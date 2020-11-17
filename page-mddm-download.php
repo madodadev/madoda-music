@@ -39,7 +39,7 @@ $download_music = new WP_Query(array(
         <section class="main" id="download-single" style="color:var(--main-fk-color)">
         <div class="container">
             <div class="top-info" >
-            <h2 class="title"><?php echo mdd_get_artist()." ". mdd_the_title()?></h2>
+            <h2 class="title"><?php echo mdd_get_artist()." ". mdd_get_title()?></h2>
             <?php dynamic_sidebar( 'single-top-sidebar' ); ?>
             <audio controls src="<?php echo mdd_get_play_audio_url()?>"></audio>
             <?php if(mdd_get_download_num() > 50): ?>
