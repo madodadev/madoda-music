@@ -58,31 +58,7 @@ $download_music = new WP_Query(array(
     wp_reset_postdata();
     ?>
     <?php dynamic_sidebar( 'single-top-sidebar' ); ?>
-    <div class="topmusic posts-cont">
-        <div class="header">
-        <?php madoda_scroll_card_header(array(
-            'name'  =>  'Musicas Novas',
-            'targetScroll'  => 'newmusica-wrap',
-            'see_more'  =>  array(
-                'link'  =>  site_url("/musics")
-            )
-        ))?>
-        </div>
         
-        <div id="newmusica-wrap" class="wrapper-card">
-            <?php
-                while($newmusics->have_posts()){
-                    $newmusics->the_post();
-                    get_template_part('template-parts/music');
-                }
-                wp_reset_postdata();
-            ?>
-        </div>
-    
-    </div>
-
-    <?php dynamic_sidebar( 'music-info-ads-sidebar' ); ?>
-    
     <div class="treding posts-cont">
         <span class="cate_name"><a href="<?php echo site_url("/musics")?>">Musicas Em Alta</a></span>
         <div class="wrapper-card-list">    
@@ -99,29 +75,6 @@ $download_music = new WP_Query(array(
 
     <?php dynamic_sidebar( 'music-info-ads-sidebar' ); ?>
 
-    <div class="topauthor posts-cont">
-        <div class="header">
-            <?php 
-            madoda_scroll_card_header(array(
-                'name'  =>  'Artistas',
-                'targetScroll'  => 'cantores-wrap',
-                'see_more'  =>  array(
-                    'link'  =>  mdd_get_archiveUrl("artist")
-                    
-                )
-            ))?>
-        </div>
-
-        <div id="cantores-wrap" class="wrapper-card">       
-            <?php 
-                while($singer->have_posts()){
-                    $singer->the_post();
-                    get_template_part('template-parts/artist');
-                }
-                wp_reset_postdata();
-            ?>
-        </div>
-    </div>
 </dev>
 </section>
     <script>
