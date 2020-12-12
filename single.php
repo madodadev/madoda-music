@@ -1,3 +1,9 @@
+<?php
+    if (mddm_is_amp()) {
+        require_once get_theme_file_path('/amp/single.php');
+        die();
+    }
+?>
 <?php get_header();?>
 <?php
 
