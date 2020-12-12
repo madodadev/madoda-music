@@ -119,6 +119,26 @@ function madoda_widgets_init() {
         'before_title'  => '<div class="widget-title footer-sidebar-widget-title">',
         'after_title'   => '</div>',
     ) );
+
+    register_sidebar( array(
+      'name' => __( 'AMP Body', 'amp-body' ),
+      'id' => 'amp-body-sidebar',
+      'description' => __( 'Widgets in this area will be shown on all posts with Artist Content', 'madoda-music' ),
+      'before_widget' => '<div id="%1$s" class="widget content-ads-widget amp-body single-sidebar %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<div class="widget-title amp-body-widget-title">',
+      'after_title'   => '</div>',
+  ) );
+
+    register_sidebar( array(
+      'name' => __( 'AMP Footer', 'amp-footer' ),
+      'id' => 'amp-footer-sidebar',
+      'description' => __( 'Widgets in this area will be shown on amp-footer after nav', 'madoda-music' ),
+      'before_widget' => '<div id="%1$s" class="widget amp-footer-sidebar %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<div class="widget-title amp-footer-sidebar-widget-title">',
+      'after_title'   => '</div>',
+  ) );
 }
  add_action( 'widgets_init', 'madoda_widgets_init' );
 
