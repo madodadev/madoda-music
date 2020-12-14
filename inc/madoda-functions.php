@@ -182,6 +182,24 @@ function mdd_is_post_haveInfo() {
  * |>>>>>>>>>>>>>>> [display loop music img] >>>>>>>>>>>>>>>>>>|
  * ============================================================
  */
+
+function mdd_get_post_img() {
+    if(get_the_post_thumbnail_url(get_the_ID())) {
+        return get_the_post_thumbnail_url(get_the_ID());
+    }else {
+        if(get_the_post_thumbnail_url(mdd_get_artist_id())) {
+            return get_the_post_thumbnail_url(mdd_get_artist_id());
+        }else {
+            return get_theme_file_uri('/assets/images/thunbnail-404.svg');
+        }
+    }
+    
+}
+
+ /**============================================================
+ * |>>>>>>>>>>>>>>> [display loop music img] >>>>>>>>>>>>>>>>>>|
+ * ============================================================
+ */
 function mdd_the_display_imgUrl() {
     if(get_the_post_thumbnail_url(get_the_ID(),'desplay')) {
         echo get_the_post_thumbnail_url(get_the_ID(),'desplay');
