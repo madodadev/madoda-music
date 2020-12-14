@@ -636,6 +636,23 @@ function mdd_get_archiveUrl($post_type) {
  * |>>>>>>>>>>>>> [return youtube video (iframe)] >>>>>>>>>>>>|
  * ============================================================
  */
+
+function mdd_get_youtube_video_id($id=NULL) {
+    $id = $id ? $id : get_the_ID();
+    $video_url = get_field('youtube_video_url', $id);
+    if($video_url) { 
+        if(strpos($video_url, 'v=')){
+            $video_id = substr(stristr($video_url, 'v='), 2);
+        }else{
+            $video_id = $video_url;
+        }   
+
+        return $video_id;
+    }
+
+    return FALSE;
+
+}
 function mdd_the_youtube_video(){
     if(get_field('youtube_video_url')){    
         $video_url = get_field('youtube_video_url');

@@ -3,7 +3,7 @@ Theme Name: Madoda Music
 Author: Assedio Horacio
 Author URI: https://madodamusci.com/
 Description: madoda music help you upload music, albums, playlists faster. this theme is super faster and work great with any device.
-Version: 2.0
+Version: 2.1
 Text Domain: madodamusic
 Tags: upload musics
 */
@@ -1323,6 +1323,49 @@ Tags: upload musics
 .list-btn .icon-download {
   width: 30px;
   height: 30px;
+}
+
+#amp-body {
+  color: var(--main-fk-color);
+  font-size: 1.5rem;
+  padding: 0 5%;
+}
+
+#amp-body .post-thumbnail {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+#amp-body li {
+  padding: 5px 0;
+}
+
+#amp-body a {
+  color: var(--destak-color);
+  text-decoration: underline;
+}
+
+#amp-body #download-btn {
+  text-align: center;
+}
+
+#amp-body .post-categories li {
+  display: inline-block;
+  padding: 10px;
+}
+
+#amp-body footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  text-align: center;
+  border-top: 1px solid var(--main-fk-color);
+}
+
+#amp-body footer nav ul li {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 5px;
 }
 
 * {

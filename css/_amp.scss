@@ -1,0 +1,42 @@
+#amp-body {
+    color: var(--main-fk-color);
+    font-size: 1.5rem;
+    padding: 0 5%;
+
+    .post-thumbnail {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    li {
+        padding: 5px 0;
+    }
+
+    a {
+        color: var(--destak-color);
+        text-decoration: underline;
+    }
+
+    #download-btn {
+        text-align: center;
+    }
+    .post-categories {
+        li{
+            display: inline-block;
+            padding: 10px;
+        }
+    }
+    footer {
+        margin-top: 20px;
+        padding-top: 20px;
+        text-align: center;
+        border-top: 1px solid var(--main-fk-color);
+
+        nav ul li{
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 5px;
+        }
+    }
+}
