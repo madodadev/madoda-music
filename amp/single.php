@@ -21,13 +21,12 @@
 
 
 <?php 
-$play_audio_url = mdd_get_play_audio_url();
-if(play_audio_url):?>
+if(is_music_playable()):?>
 <amp-audio
     width="auto"
     height="50"
     controls
-    src="<?php echo $play_audio_url?>"
+    src="<?php echo mdd_get_play_audio_url()?>"
     artwork="<?php echo get_theme_file_uri('/assets/images/mddm512.png')?>"
     title="<?php echo mdd_get_title() ?>"
     artist="<?php echo mdd_get_artist()?>"
