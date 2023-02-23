@@ -26,6 +26,15 @@
             padding: 10px;
         }
     }
+
+    .tags a{
+        display: inline-block;
+        background-color: var(--destak-color);
+        border-radius: 50px;
+        padding: 10px;
+        margin: 5px;
+    }
+
     footer {
         margin-top: 20px;
         padding-top: 20px;
